@@ -66,6 +66,7 @@ public class GetData extends HttpServlet {
 		StringEntity params = new StringEntity(json.toString());
 		request.addHeader("content-type", "application/json");
 		request.setEntity(params);
+		
 		HttpResponse response = httpClient.execute(request);
 
 
