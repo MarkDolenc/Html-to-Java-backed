@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Skleni zavarovanje</title>
+</head>
+<body>
+	<div align="center">
+	<form name="dataForm" method="post" action="FormServlet">
+		Ime: <input type="text" name="ime"/> <br/>
+		Priimek: <input type="text" name="priimek"/> <br/>
+		Davčna številka : <input type="text" name="davcna"/> <br/>
+		Rojstni datum : <input type="date" name="datumRojstva"/> <br/>
+		<br/>
+		Zavarovanje: <br/>
+		<input type="radio" name="id" value="1">Zavarovanje hiše<span>
+		<input type="radio" name="id" value="2">Zavarovanje travnika<span>
+		<input type="radio" name="id" value="3">Zavarovanje kmetije<br/><br/>
+		<input type="submit" value="SKLENI" />
+	</form>
+	</div>
+</body>
+</html>
