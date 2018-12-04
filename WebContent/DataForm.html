@@ -12,7 +12,8 @@
         var name = $("#ime").val();
         var surname = $("#priimek").val();
         var davNumber = $("#Davcna").val();
-        var date = $("#datumRojstva").val();
+		var date = $("#datumRojstva").val();
+		var type = $("input[type='radio'][name='zavarovanje']:checked").val();
         if (name == '' || surname == '' || davNumber == '' || date == '') {
             alert("Izpolnite vsa polja");
         } 
@@ -53,8 +54,14 @@
 
 	  <label for="datumRojstva"><b>Datum Rojstva</b></label>
 	  <input type="date" name="datumRojstva" required>
+	  <br><br>
 
-      <p>S klikom na gumb "SKLENI" se strinjate s <a href="#" style="color:dodgerblue">Pogoji uporabe</a>.</p>
+	  <label for="Zavarovanje"><b>Tip zavarovanja</b></label><br>
+	  <input type="radio" name="zavarovanje" value="hisa"> Zavarovanje hiše<span/>
+	  <input type="radio" name="zavarovanja" value="travnik"> Zavarovanje travnika<span/>
+	  <input type="radio" name="zavarovanje" value="kmetija"> Zavarovanje kmetije<span/>
+	  
+	  <p>S klikom na gumb "SKLENI" se strinjate s <a href="#" style="color:dodgerblue">Pogoji uporabe</a>.</p>
 
       <div class="clearfix">
         <button type="button" onclick="document.getElementById('form').style.display='none'" class="cancelbtn">Prekliči</button>
