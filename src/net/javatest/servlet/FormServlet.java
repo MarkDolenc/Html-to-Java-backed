@@ -36,6 +36,8 @@ public class FormServlet<string> extends HttpServlet {
 
 	private void processInput(string name, string surname, string number, string date) {
 		// Process stuff here
-		// add parameters to JSON object
+		// add parameters to JSON object ?
+		// call a method that stores stuff into database or sends it to webservice?
+
 	}
 }
