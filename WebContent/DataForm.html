@@ -4,21 +4,41 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Skleni zavarovanje</title>
+<link rel="stylesheet" href="styles.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
 </head>
 <body>
-	<div align="center">
-	<form name="dataForm" method="post" action="FormServlet">
-		Ime: <input type="text" name="ime"/> <br/>
-		Priimek: <input type="text" name="priimek"/> <br/>
-		Davčna številka : <input type="text" name="davcna"/> <br/>
-		Rojstni datum : <input type="date" name="datumRojstva"/> <br/>
-		<br/>
-		Zavarovanje: <br/>
-		<input type="radio" name="id" value="1">Zavarovanje hiše<span>
-		<input type="radio" name="id" value="2">Zavarovanje travnika<span>
-		<input type="radio" name="id" value="3">Zavarovanje kmetije<br/><br/>
-		<input type="submit" value="SKLENI" />
-	</form>
-	</div>
+<!-- Button to open the form -->
+<button onclick="document.getElementById('form').style.display='block'" class="firstButton">Skleni zavarovanje</button>
+
+<!--Form-->
+<div id="form" class="form">
+  <span onclick="document.getElementById('form').style.display='none'" class="close" title="Zapri"></span>
+  <form class="form-content" action="#">
+    <div class="container">
+      <h1>Skleni zavarovanje</h1>
+      <hr>
+      <label for="Ime"><b>Ime</b></label>
+      <input type="text" placeholder="Vaše ime" name="ime" required>
+
+      <label for="Priimek"><b>Priimek</b></label>
+      <input type="text" placeholder="Vaš priimek" name="priimek" required>
+
+      <label for="Davcna"><b>Davčna številka</b></label>
+      <input type="text" placeholder="Davčna številka" name="Davcna" required>
+
+	  <label for="datumRojstva"><b>Datum Rojstva</b></label>
+	  <input type="date" name="datumRojstva" required>
+
+      <p>S klikom na gumb "SKLENI" se strinjate s <a href="#" style="color:dodgerblue">Pogoji uporabe</a>.</p>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('form').style.display='none'" class="cancelbtn">Prekliči</button>
+        <button type="submit" class="signup" name="skleni">SKLENI</button>
+      </div>
+    </div>
+  </form>
+</div> 
 </body>
 </html>

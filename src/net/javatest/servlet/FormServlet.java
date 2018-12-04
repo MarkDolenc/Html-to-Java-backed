@@ -9,9 +9,7 @@ import jdk.nashorn.internal.runtime.JSONFunctions;
 import org.json.JSONObject;
 import sun.net.www.http.HttpClient;
 
-
 import java.io.IOException;
-
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,10 +20,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 
-
-
 @WebServlet("/getData")
-public class GetData extends HttpServlet {
+public class FormServlet extends HttpServlet {
 
 	public static String Ime;
 	public static String priimek;
@@ -33,8 +29,7 @@ public class GetData extends HttpServlet {
 	public static String birthDate;
 	public static String[] person;
 
-	private String[] GetPerson(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	private void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		person = new String[4];
 
@@ -44,16 +39,16 @@ public class GetData extends HttpServlet {
 		davcna = request.getParameter("davcna");
 		birthDate = request.getParameter("datumRojstva");
 
-		person[0] = Ime;
-		person[1] = priimek;
-		person[2] = davcna;
-		person[3] = birthDate;
-
-		return person;
-		convertToJson();
+		processInput(Ime, priimek, davcna, birthDate);
 	}
 
-	private void convertToJson(){
+	
+
+	private void processInput(string name, string surname, string number, string date) {
+		// Process stuff here
+	}
+
+	private void convertToJson() {
 
 		JSONObject json = new JSONObject();
 
@@ -66,10 +61,8 @@ public class GetData extends HttpServlet {
 		StringEntity params = new StringEntity(json.toString());
 		request.addHeader("content-type", "application/json");
 		request.setEntity(params);
-		
+
 		HttpResponse response = httpClient.execute(request);
-
-
 
 	}
 
