@@ -30,11 +30,12 @@ public class FormServlet<string> extends HttpServlet {
 		string priimek = request.getParameter("priimek");
 		string davcna = request.getParameter("davcna");
 		string birthDate = request.getParameter("datumRojstva");
+		string tipZavarovanja = request.getParameter("tipZavarovanja");
 
-		processInput(Ime, priimek, davcna, birthDate);
+		processInput(Ime, priimek, davcna, birthDate, tipZavarovanja);
 	}
 
-	private void processInput(string name, string surname, string number, string date) {
+	private void processInput(string name, string surname, string number, string date, string tipZavarovanja) {
 		// Process stuff here
 		// add parameters to JSON object ?
 		// call a method that stores stuff into database or sends it to webservice?

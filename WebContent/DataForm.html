@@ -22,7 +22,8 @@
             ime: name,
             priimek: surname,
             davcna: davNumber,
-            datumRojstva: date
+			datumRojstva: date,
+			tipZavarovanja: type
             }, function(data) {
             if (data == 'Poslano v povpraševanje') {
                 $("form")[0].reset();
