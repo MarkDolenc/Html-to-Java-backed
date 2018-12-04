@@ -21,49 +21,21 @@ import java.net.URL;
 import java.net.URLConnection;
 
 @WebServlet("/getData")
-public class FormServlet extends HttpServlet {
-
-	public static String Ime;
-	public static String priimek;
-	public static String davcna;
-	public static String birthDate;
-	public static String[] person;
+public class FormServlet<string> extends HttpServlet {
 
 	private void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		person = new String[4];
-
 		// read form fields
-		Ime = request.getParameter("ime");
-		priimek = request.getParameter("priimek");
-		davcna = request.getParameter("davcna");
-		birthDate = request.getParameter("datumRojstva");
+		string Ime = request.getParameter("ime");
+		string priimek = request.getParameter("priimek");
+		string davcna = request.getParameter("davcna");
+		string birthDate = request.getParameter("datumRojstva");
 
 		processInput(Ime, priimek, davcna, birthDate);
 	}
 
-	
-
 	private void processInput(string name, string surname, string number, string date) {
 		// Process stuff here
+		// add parameters to JSON object
 	}
-
-	private void convertToJson() {
-
-		JSONObject json = new JSONObject();
-
-		json.put("Ime", person[0]);
-		json.put("Priimek", person[1]);
-		json.put("Datum rojstva", person[2]);
-		json.put("Davčna številka", person[3]);
-
-		HttpPost request = new HttpPost("http://localhost/sklenizavarovanje");
-		StringEntity params = new StringEntity(json.toString());
-		request.addHeader("content-type", "application/json");
-		request.setEntity(params);
-
-		HttpResponse response = httpClient.execute(request);
-
-	}
-
 }
